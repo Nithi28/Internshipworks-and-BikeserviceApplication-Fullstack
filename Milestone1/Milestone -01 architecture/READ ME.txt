@@ -1,0 +1,38 @@
+Whenever the bowser connect to the internet and requested for the particular site(ex: www.google.com) all the data will be transmitted by following the rules of TCP/IP model.
+Image 1: Refers to the working of how the browser loads the requestd site from the server through the internet.
+Image 2: Refers how the data flow in the internet by followin TCP/IP model and layers in the TCP model.
+
+TCP/IP: Transmission Control Protocol and Internet Protocol are communication protocols that define how data should travel across the internet. This is like the transport mechanisms that let you place an order, go to the shop, and buy your goods. In our example, this is like a car or a bike (or however else you might get around).
+
+
+
+1. **DNS Resolution**:
+   - Your request goes to a **DNS server**, which translates the URL (like **www.google.com**) into an **IP address**. The DNS system helps find the correct server associated with the website.
+   
+
+2. **Server Interaction**:
+   - The request then goes to the server where the website is hosted. This server contains the website content that needs to be displayed.
+   - The server might be running software like **Apache HTTP Server** to serve web pages .
+
+3. **Network Details**:
+   - **IP Address**: Every computer in a network, including yours, has an IP address.
+   - **Subnets**: Networks can be divided into subnets.
+   - Being in a different class of network doesn't significantly affect the process.
+
+4. **TCP Connection**:
+   - Once the IP address is known, your browser sets up a connection to the server via a **TCP three-way handshake**. This negotiation ensures proper communication parameters before transmitting data, often over **HTTPS** .
+
+5. **Data Transmission**:
+   - The browser sends an **HTTP request** to the server, asking for a copy of the website.
+   - The server responds by sending the requested data back to your browser.
+   - All this communication happens across your internet connection using **TCP/IP** 
+
+
+(1) how a website is loaded in our browser - Stack Overflow. https://stackoverflow.com/questions/3263455/how-a-website-is-loaded-in-our-browser.
+(2) Populating the page: how browsers work - Web performance | MDN. https://developer.mozilla.org/en-US/docs/Web/Performance/How_browsers_work.
+(3) How the web works - Learn web development | MDN - MDN Web Docs. https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works.
+(4) web applications - Difference Between TCP Load Balancer and HTTP Load .... https://stackoverflow.com/questions/25743419/difference-between-tcp-load-balancer-and-http-load-balancer-and-when-to-use-what.
+(5) http://en.wikipedia.org/wiki/Domain_Name_System.
+(6) http://en.wikipedia.org/wiki/Apache_HTTP_Server.
+(7) http://en.wikipedia.org/wiki/Subnetwork.
+(8) http://en.wikipedia.org/wiki/Routers%29.

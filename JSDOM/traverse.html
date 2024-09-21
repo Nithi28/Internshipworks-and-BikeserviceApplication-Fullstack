@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <p>para 1</p>
+        <p class="second">para 2</p>
+        <p>para 3</p>
+        <p>para 4</p>
+    </div>
+    <script>
+        let cont=document.querySelector(".container")
+        console.log(cont.firstElementChild);//Get a first child
+        console.log(cont.lastElementChild);// Get a last child
+        console.log(cont.childNodes)// Get all the child nodes
+        /*Select previous and next siblings*/
+        let sec=document.querySelector(".second");
+        console.log(sec.previousElementSibling);
+        console.log(sec.nextElementSibling);
+
+        //Creating a element using js
+        let div=document.createElement("div");
+        div.innerHTML="<p> A New Element Created </p>";
+        document.body.appendChild(div)
+        console.log(div);
+    </script>
+</body>
+</html>

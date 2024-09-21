@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventHandlers</title>
+</head>
+<body>
+    <h1>First Method</h1>
+    <p>1. HTML event handler attribute</p>
+    <p id="demo"></p>
+    <button id="btn" onclick="fire()">Click Here</button>
+    <script>
+        function fire(){
+            document.getElementById("demo").innerHTML="Button clicked 1";
+        }
+    </script>
+    <h1>Second Method</h1>
+    <p>2. Adding EventHandlers name in java script</p>
+    <p id="demo1"></p>
+    <button id="btn1" >Click Here</button>
+    <script>
+        let btn1=document.getElementById("btn1");
+        btn1.onclick= function (){
+            document.getElementById("demo1").innerHTML="Button clicked 2";
+        }
+    </script>
+    <h1>Third Method</h1>
+    <p>2. Using addEventListeners and removeEventListeners</p>
+    <p id="demo2"></p>
+    <button id="btn2" >Click Here</button>
+    <script>
+        let btn2=document.getElementById("btn2");
+        btn2.addEventListener('click',fire2);
+        
+        function fire2(){
+            document.getElementById("demo2").innerHTML="Button clicked 3";
+        }
+        
+    </script>
+
+
+</body>
+</html>
