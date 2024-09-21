@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyBikes Service Booking</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: black;
+            background-image: url('/images/booking-2.jpg');
+            background-size: cover;  
+            background-position: center;  
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            min-height: 100vh; 
+            
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center; 
+            justify-content: center; 
+            padding: 20px;
+        }
+
+        .btn-red {
+            background-color: red;
+            border: none;
+            color: white;
+        }
+
+        .btn-red:hover {
+            background-color: darkred;
+        }
+
+        .form-label {
+            color: black;
+        }
+
+        .form-check-input:checked {
+            background-color: red;
+            border-color: red;
+        }
+
+        .form-check-label {
+            color: black;
+        }
+
+        .message-container {
+            display: none; 
+            text-align: center;
+        }
+
+        .message-container h3 {
+            display: block;
+            background-color:white;
+            border-radius: 10px;
+            color: rgb(0, 0, 0); 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="form-container"> 
+            <a href="site.html" style="display: block; background-color: #fff; border-radius: 10px;">
+            <img class="pb-3" src="/images/logo.jpg" alt="" style="width: 40px; " >
+            <h2 class="text-center " style="color: rgb(194, 16, 16); font-weight: 700; font-style: oblique; display: inline-block; ">MyBikes Service Booking</h2></a>
+            <form id="service-form" action="/booking.html" method="post">
+                <div class="form-group">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="bike_model" class="form-label" >Bike Model</label>
+                    <input type="text" class="form-control" id="bike_model" name="bike_model" required>
+                </div>
+                <div class="form-group">
+                    <label for="services" class="form-label">Select Services</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="checkboxOptions[]" id="oil_service" value="oil">
+                        <label class="form-check-label" for="oil_service">Oil Service</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="checkboxOptions[]" id="water_service" value="water">
+                        <label class="form-check-label" for="water_service">Water Service</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="checkboxOptions[]" id="full_service" value="full">
+                        <label class="form-check-label" for="full_service">Full Service</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-red">Book</button>
+            </form>
+        </div>
+
+        <div class="message-container" id="message-container">
+            <h3>Your service is booked!</h3>
+            <button class="btn btn-red" id="book-another">Book Another</button><br>
+            <button class="btn btn-red mt-2" id="Nav-Home" >Home</button>
+        </div>
+    </div>
+
+    
+    <script>
+        document.getElementById("service-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+    const jsonData = {};
+
+    
+    formData.forEach((value, key) => {
+        if (key === 'checkboxOptions[]') {
+            if (!Array.isArray(jsonData['checkboxOptions'])) {
+                jsonData['checkboxOptions'] = [];
+            }
+            jsonData['checkboxOptions'].push(value);
+        } else {
+            jsonData[key] = value;
+        }
+        e.target.reset();
+    });
+
+
+      
+          fetch("http://localhost:3500/booking.html", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(jsonData)
+          })
+          .then((response) => {
+            if (response.ok) {
+              document.getElementById("form-container").style.display = "none";
+              document.getElementById("message-container").style.display = "block";
+            } else {
+              console.error("Error booking service");
+            }
+          })
+          .catch((error) => console.error("Network error:", error));
+          
+        });
+        
+        document.getElementById("book-another").addEventListener("click",function(){
+            document.getElementById("message-container").style.display = "none";
+            document.getElementById("form-container").style.display = "block";
+        })
+        document.getElementById("Nav-Home").addEventListener("click", function () {
+        // Redirect the user to the home page
+        window.location.href = "site.html";
+    });
+      </script>
+      
+
+ 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

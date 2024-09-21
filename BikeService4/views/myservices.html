@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY SERVICES</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffffff; 
+            color: #000000; 
+        }
+        h1 {
+            color: #ff0000; 
+            text-align: center;
+            margin-top: 20px;
+        }
+        .table-container {
+            margin-top: 50px;
+            border: 2px solid #000000; 
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f8f9fa; 
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #000000; 
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #333; 
+            color: #ffffff; 
+        }
+        td {
+            background-color: #ffffff; 
+            color: #000000; 
+        }
+        .table-hover tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: #f9f9f9; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container table-container">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-auto mt-3 pr-1">
+                    <img src="/images/logo.jpg" alt="logo" class="img-fluid" style="width: 40px;">
+                </div>
+                <div class="col-auto pl-1">
+                    <a href="/site.html" style="text-decoration: none;">
+                    <h1 style="font-style: oblique;">Your Bookings</h1>
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+        <table class="table table-hover table-striped" id="registerTable">
+            <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Bike Model</th>
+                    <th>Status</th>
+                    <th>Services</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Function to fetch data from the backend
+        async function fetchData() {
+            try {
+                const response = await fetch('http://localhost:3500/services.html');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch data');
+                }
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                return [];
+            }
+        }
+
+        // Function to display data in the table
+        async function displayData() {
+            const data = await fetchData();
+            console.log(data)
+            const tableBody = document.getElementById('registerTable').getElementsByTagName('tbody')[0];
+            data.forEach(register => {
+                const row = tableBody.insertRow();
+                const emailCell = row.insertCell(0);
+                const phoneCell = row.insertCell(1);
+                const bikeModelCell = row.insertCell(2);
+                const statusCell = row.insertCell(3);
+                const servicecell=row.insertCell(4);
+
+                emailCell.textContent = register.name; 
+                phoneCell.textContent = register.phone; 
+                bikeModelCell.textContent = register.bike_model; 
+                statusCell.textContent = register.status || 'Pending'; 
+                servicecell.textContent=register.checkboxOptions
+                
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', displayData);
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
