@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Elementbyclass</title>
+    </head>
+    <body>
+        <h1>Get the element by class name</h1>
+        <p class="intro"> This is para one</p>
+        <p class="intro">This is para two</p>
+        <p id="demo"></p>
+        <script>
+            const element=document.getElementsByClassName("intro")
+            document.getElementById("demo").innerHTML="By get the element by the class neme we use the class index(0) "+element[0].innerHTML;
+        </script>
+    </body>
+</html>

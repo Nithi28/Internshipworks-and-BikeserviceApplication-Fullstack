@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dish Selector</title>
+    <script>
+      // Paste your code snippet here
+      function promptForDishChoice() {
+        return new Promise((resolve, reject) => {
+          const dialog = document.createElement("dialog");
+          dialog.innerHTML = `
+      <form method="dialog">
+        <p>What would you like to eat?</p>
+        <select>
+          <option value="pizza">Pizza</option>
+          <option value="pasta">Pasta</option>
+          <option value="salad">Salad</option>
+        </select>
+        <menu>
+          <li><button value="cancel">Cancel</button></li>
+          <li><button type="submit" value="ok">OK</button></li>
+        </menu>
+      </form>
+          `;
+          dialog.addEventListener("close", () => {
+            if (dialog.returnValue === "ok") {
+              resolve(dialog.querySelector("select").value);
+            } else {
+              reject(new Error("User cancelled dialog"));
+            }
+          });
+          document.body.appendChild(dialog);
+          dialog.showModal();
+        });
+      }
+      
+      async function fetchPrices() {
+        const response = await fetch("/prices");
+        return await response.json();
+      }
+
+      document.addEventListener("DOMContentLoaded", async () => {
+        try {
+          const choice = await promptForDishChoice();
+          console.log(`You selected: ${choice}`);
+        } catch (error) {
+          console.error(error.message);
+        }
+      });
+    </script>
+</head>
+<body>
+    <!-- You can add more HTML elements here if needed -->
+</body>
+</html>

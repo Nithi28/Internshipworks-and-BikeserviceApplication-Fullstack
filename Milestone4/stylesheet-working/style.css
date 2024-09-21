@@ -1,0 +1,49 @@
+@font-face {
+    font-family: Satisfy-Regular;
+    src: url(fonts/Satisfy-Regular.ttf);
+}
+@font-face {
+    font-family: Pacifico-Regular;
+    src: url(fonts/Pacifico-Regular.ttf);
+}
+body
+{
+    background-color: rgb(225, 89, 173);
+    border: 1px solid;
+    display: flow-root;
+
+}
+.odd{
+    padding: 25px;
+    
+    border-bottom: 3px dotted black;
+    font-family:Satisfy-Regular ;
+    font-style: italic;
+    font-size: larger;
+    color: gold;
+}
+.even{
+    padding: 25px;
+    border-bottom: 3px dotted black;
+    font-family: Pacifico-Regular;
+    font-style: oblique;
+    font-size: large;
+    color: rgb(97, 8, 97);
+   
+}
+h1{
+    color: aliceblue;
+    text-shadow: 3px 3px 5px rgb(207, 34, 34),-3px -3px 5px rgb(50, 35, 214);
+}
+h3{
+    color: white;
+}
+#v2{
+    margin : 20px;
+    float: left;
+   
+}
+
+.image{
+    display: inline;
+}

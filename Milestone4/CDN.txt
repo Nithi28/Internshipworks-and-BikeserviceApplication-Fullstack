@@ -1,0 +1,17 @@
+What is CDN?
+CDN stands for Content Delivery Network. It is a network that helps to speed up web page loading for web users. It is spread all over the world as usage of the internet is everywhere. It is basically a distributed system of servers that stores the data by the use of Amazon Web services or Google Cloud storage, and it serves that data to the user via the nearest server so that the loading or buffering of web pages is low.
+
+How it works?
+The CDN is a collection of servers or a network of all the servers that deliver data all over the world to the web user. It has three main components, each component has its own value and role to play.
+
+The first one is the Origin server which stores all the data spread all over the world. It is the main server that handles every delivery and also it maintains the updated version of data.
+
+The second one is the Edge server which stores temporary data means it stores a copy of the original data temporarily. also, It is the one that delivers the data to the web user. The number of Edge servers is many, the nearest Edge servers deliver the data to the web user so that there should not be any delay in between the loading of the page on the web.
+
+The third one is a DNS server that keeps track of the IP addresses. whenever a user sends a request through the internet on the web browser then in response to that request the Origin Server gives the IP address. By accessing that IP address the user gets their data on the web.
+
+Benefits of CDN
+Fastest Delivery: It delivers the data very fast because of Edge servers that are spread all over geographical areas. It handles the web traffic which also helps in decreasing the page load time.
+Bandwidth cost: It reduces the bandwidth cost, as it provides the caching system which helps in maintaining the bandwidth consumption over the network.
+Availability: The Origin server stores all the data if any of the data gets updated the Origin server keeps track of that and updates that data immediately.
+Security: It provides all the security to the web pages. It has all the protection to prevent any security breach.

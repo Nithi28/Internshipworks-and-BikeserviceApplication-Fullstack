@@ -1,0 +1,46 @@
+header{
+    background-color: rgb(199, 123, 24);
+    padding: 25px;
+}
+aside{
+    width :33%;
+    float: left;
+    text-align: center;
+    padding: 5px;
+    
+}
+section{
+    width :33%;
+    float: left;
+    text-align: center;
+    padding: 5px;
+}
+article{
+    width :30%;
+    float:left;
+    text-align: center;
+    padding: 5px;
+}
+nav{
+    
+    padding: 25px;
+    background-color: black;
+    color: white;
+}
+#one{
+    width:100%;
+}
+footer{
+    
+    height: 100px;
+    clear: left;
+    padding: 33px;
+    background-color: rgb(223, 199, 199);
+    text-align: center;
+}
+.cls{
+    background-color: rgb(182, 32, 199);
+    width: 30%;
+    padding: 25px;
+    margin: auto;
+}

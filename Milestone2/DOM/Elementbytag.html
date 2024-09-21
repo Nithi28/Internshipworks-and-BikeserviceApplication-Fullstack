@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Element By Tag</title>
+    </head>
+    <body>
+        <H1>Get the Element by Tag</H1>
+        <p>this is para one</p>
+        <p>this is para two</p>
+        <p id="demo"></p>
+        <script>
+            const element= document.getElementsByTagName("p");
+            document.getElementById("demo").innerHTML = "By using the getelementby tag we use the para of (index(1))"+ element[0].innerHTML;
+        </script>
+    </body>
+</html>

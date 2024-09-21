@@ -1,0 +1,80 @@
+CSS Flex:
+
+Definition and Usage
+The flex property is a shorthand property for:
+
+flex-grow
+flex-shrink
+flex-basis
+The flex property sets the flexible length on flexible items.
+
+Note: If the element is not a flexible item, the flex property has no effect.
+
+CSS Syntax:
+flex: flex-grow flex-shrink flex-basis|auto|initial|inherit;
+
+Property and values:
+
+
+Value	Description	Demo
+flex-grow	-A number specifying how much the item will grow relative to the rest of the flexible items	
+flex-shrink	-A number specifying how much the item will shrink relative to the rest of the flexible items	
+flex-basis	-The length of the item. Legal values: "auto", "inherit", or a number followed by "%", "px", "em" or any other length unit	
+auto	-Same as 1 1 auto.	
+initial	-Same as 0 1 auto. Read about initial	
+none	-Same as 0 0 auto.	
+inherit	-Inherits this property from its parent element. Read about inherit	
+
+
+CSS flex-grow Property:
+
+The flex-grow property specifies how much the item will grow relative to the rest of the flexible items inside the same container.
+
+Note: If the element is not a flexible item, the flex-grow property has no effect.
+
+
+CSS flex-shrink Property:
+The flex-shrink property specifies how the item will shrink relative to the rest of the flexible items inside the same container.
+
+Note: If the element is not a flexible item, the flex-shrink property has no effect.
+
+CSS flex-basis Property:
+Definition and Usage
+The flex-basis property specifies the initial length of a flexible item.
+
+Note: If the element is not a flexible item, the flex-basis property has no effect.
+
+
+CSS flex-direction Property:
+Definition and Usage
+The flex-direction property specifies the direction of the flexible items.
+
+Note: If the element is not a flexible item, the flex-direction property has no effect.
+
+Property Values
+Value	Description	Play it
+row	-Default value. The flexible items are displayed horizontally, as a row	
+row-reverse	-Same as row, but in reverse order	
+column	-The flexible items are displayed vertically, as a column	
+column-reverse	-Same as column, but in reverse order	
+initial	-Sets this property to its default value. Read about initial	
+inherit	-Inherits this property from its parent element. Read about inherit
+
+CSS flex-wrap Property:
+Definition and Usage:
+The flex-wrap property specifies whether the flexible items should wrap or not.
+
+Note: If the elements are not flexible items, the flex-wrap property has no effect.
+
+CSS Syntax
+flex-wrap: nowrap|wrap|wrap-reverse|initial|inherit;
+
+Property Values
+Value	Description	
+nowrap	-Default value. Specifies that the flexible items will not wrap	
+wrap	-Specifies that the flexible items will wrap if necessary	
+wrap-reverse	-Specifies that the flexible items will wrap, if necessary, in reverse order	
+initial-	Sets this property to its default value. Read about initial	
+inherit-	Inherits this property from its parent element. Read about inherit
+
+

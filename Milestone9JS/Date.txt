@@ -1,0 +1,13 @@
+1) Data Comparision: https://www.freecodecamp.org/news/javascript-date-comparison-how-to-compare-dates-in-js/
+
+
+2)UTC to Local or Local to UTC : To convet we can use toLocalString() or toUTCString() else convert using getTimezoneOffset().
+
+
+3)Methods of showing dates: https://phoenixnap.com/kb/how-to-get-the-current-date-and-time-javascript
+
+4)Epoch Time:https://bito.ai/resources/get-epoch-time-javascript-javascript-explained/
+
+5)Display Formatted Date in JavaScript Without Using Any External Library:https://dev.to/myogeshchavan97/how-to-display-formatted-date-in-javascript-without-using-any-external-library-1n2m
+
+6)DST: https://www.heady.io/blog/javascript-handle-date-in-any-timezone-with-daylight-saving-check

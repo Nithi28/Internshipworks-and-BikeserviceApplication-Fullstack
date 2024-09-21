@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript async / await</h1>
+<h2 id="demo"></h2>
+
+<script>
+async function myDisplay() {
+  let myPromise = new Promise(function(resolve, reject) {
+    resolve("I love You !!");
+  });
+ 
+  	
+  document.getElementById("demo").innerHTML =await myPromise;
+}
+
+myDisplay();
+</script>
+
+</body>
+</html>
+<!-- 
+    HTML Structure: The HTML code defines a simple webpage with an h1 tag containing the text "JavaScript async / await" and an empty h2 tag with the id "demo".
+JavaScript Section:
+Async Function Declaration: An async function named myDisplay is declared. Async functions allow you to use the await keyword inside them to pause execution until a promise is resolved or rejected.
+Promise Creation: Inside the myDisplay function, a new Promise object myPromise is created. This promise immediately resolves with the string "I love You !!" when it's created. The resolve function is used to fulfill the promise with the specified value.
+Setting Inner HTML: The await keyword is used directly within the myDisplay function to wait for the promise myPromise to be resolved. Once the promise is resolved, the result ("I love You !!") is assigned to the inner HTML content of the element with the id "demo" using document.getElementById("demo").innerHTML.
+Function Invocation: Finally, the myDisplay function is invoked at the end of the script, initiating the asynchronous execution of its code.
+Execution Flow:
+When the script is run, it starts by creating the promise myPromise.
+The myDisplay async function is invoked.
+Inside myDisplay, the promise myPromise is awaited. This pauses the execution of the function until the promise is resolved.
+Once the promise is resolved, the string "I love You !!" is obtained, and it's assigned to the inner HTML content of the element with the id "demo".
+The text "I love You !!" will be displayed on the webpage within the h2 element.
+In summary, this code demonstrates the usage of async/await in JavaScript to handle promises in a more synchronous-like manner, making asynchronous code easier to read and write.
+-->

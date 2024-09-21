@@ -1,0 +1,127 @@
+CSS Borders
+
+The CSS border properties allow you to specify the style, width, and color of an element's border.
+
+
+CSS Border Style:
+The border-style property specifies what kind of border to display.
+
+The following values are allowed:
+
+dotted - Defines a dotted border
+dashed - Defines a dashed border
+solid - Defines a solid border
+double - Defines a double border
+groove - Defines a 3D grooved border. The effect depends on the border-color value
+ridge - Defines a 3D ridged border. The effect depends on the border-color value
+inset - Defines a 3D inset border. The effect depends on the border-color value
+outset - Defines a 3D outset border. The effect depends on the border-color value
+none - Defines no border
+hidden - Defines a hidden border
+
+The border-style property can have from one to four values (for the top border, right border, bottom border, and the left border).
+
+CSS Border Width:
+The border-width property specifies the width of the four borders.
+
+The width can be set as a specific size (in px, pt, cm, em, etc) or by using one of the three pre-defined values: thin, medium, or thick:
+
+p.one {
+  border-style: solid;
+  border-width: 5px;
+}
+
+p.two {
+  border-style: solid;
+  border-width: medium;
+}
+
+p.three {
+  border-style: dotted;
+  border-width: 2px;
+}
+
+p.four {
+  border-style: dotted;
+  border-width: thick;
+}
+
+Specific Side Widths:
+The border-width property can have from one to four values (for the top border, right border, bottom border, and the left border):
+
+p.one {
+  border-style: solid;
+  border-width: 5px 20px; /* 5px top and bottom, 20px on the sides */
+}
+
+p.two {
+  border-style: solid;
+  border-width: 20px 5px; /* 20px top and bottom, 5px on the sides */
+}
+
+p.three {
+  border-style: solid;
+  border-width: 25px 10px 4px 35px; /* 25px top, 10px right, 4px bottom and 35px left */
+}
+
+
+
+
+CSS Border Color:
+The border-color property is used to set the color of the four borders.
+
+p.one {
+  border-style: solid;
+  border-color: red;
+}
+
+p.two {
+  border-style: solid;
+  border-color: green;
+}
+
+p.three {
+  border-style: dotted;
+  border-color: blue;
+}
+
+Specific Side Colors:
+The border-color property can have from one to four values (for the top border, right border, bottom border, and the left border). 
+
+p.one {
+  border-style: solid;
+  border-color: red green blue yellow; /* red top, green right, blue bottom and yellow left */
+}
+
+CSS Border - Individual Sides:
+In CSS, there are also properties for specifying each of the borders (top, right, bottom, and left):
+
+p {
+  border-top-style: dotted;
+  border-right-style: solid;
+  border-bottom-style: dotted;
+  border-left-style: solid;
+}
+
+CSS Shorthand Border Property:
+
+To shorten the code, it is also possible to specify all the individual border properties in one property.
+
+The border property is a shorthand property for the following individual border properties:
+
+border-width
+border-style (required)
+border-color
+
+p {
+  border: 5px solid red;
+}
+CSS Rounded Borders:
+The border-radius property is used to add rounded borders to an element:
+
+p {
+  border: 2px solid red;
+  border-radius: 5px;
+}
+
+
